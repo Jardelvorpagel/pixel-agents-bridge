@@ -1,0 +1,14 @@
+{
+  "name": "pixel-agents-bridge",
+  "version": "1.0.0",
+  "description": "Bridge between OpenCode and Pixel Agents VS Code extension",
+  "type": "module",
+  "main": "bridge.ts",
+  "scripts": {
+    "start": "npx tsx bridge.ts",
+    "start:bun": "bun run bridge.ts"
+  },
+  "dependencies": {
+    "tsx": "^4.19.0"
+  }
+}
