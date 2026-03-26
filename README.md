@@ -113,6 +113,15 @@ If you want the server to always start with the TUI, add `server.port` to your O
 **Auth errors (401)**
 - If OpenCode has `OPENCODE_SERVER_PASSWORD` set, pass it to the bridge: `--password <pass>`
 
+## GitHub OpenCode workflow
+
+This repo also includes `.github/workflows/opencode.yml` so OpenCode can run from GitHub comments and update the related issue or PR.
+
+- Trigger it by adding a new comment with `/oc` or `/opencode` on an issue, a PR conversation, or an inline PR review comment.
+- On PR comments, the workflow resolves and checks out the PR head commit so OpenCode runs against the proposed changes instead of default-branch code.
+- The workflow keeps `contents` read-only, adds `models: read` for the configured GitHub Models backend, and grants only `issues: write` and `pull-requests: write` for issue/PR updates.
+- If the workflow cannot write back to GitHub, check the repository's **Settings → Actions → General → Workflow permissions** and make sure `GITHUB_TOKEN` is allowed to have read and write access.
+
 ## Architecture
 
 ```
